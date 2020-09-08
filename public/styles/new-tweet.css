@@ -1,0 +1,30 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+form > label {
+  margin: 10px 5px;
+  padding: 10px 5px;
+  border-bottom: 3px solid #99A3A4;
+}
+form > textarea {
+  margin: 10px 5px;
+  padding: 10px 5px;
+}
+.submit {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+button {
+  color: aliceblue;
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1  ;
+}
