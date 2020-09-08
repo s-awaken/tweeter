@@ -1,7 +1,3 @@
-body{
-  font-family: 'Bungee', cursive;
-  font-family: 'Source Sans Pro', sans-serif;
-}
 .nav {
   display: flex;
   line-height: 120px;
@@ -10,6 +6,7 @@ body{
   color: #FFFFFF;
   padding: 1.5em;
   justify-content: space-between;
+  position: fixed;
 }
 .nav > span{
   font-family: 'Bungee', cursive;
