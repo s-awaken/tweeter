@@ -9,13 +9,13 @@ form {
   flex-direction: column;
 }
 form > label {
-  margin: 10px 5px;
   padding: 10px 5px;
-  border-bottom: 3px solid #99A3A4;
 }
 form > textarea {
-  margin: 10px 5px;
-  padding: 10px 5px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 3px  solid #99A3A4;
 }
 .submit {
   display: flex;
@@ -27,4 +27,7 @@ button {
   color: aliceblue;
   font-family: 'Bungee', cursive;
   background-color: #4056A1  ;
+}
+output {
+  font-family: 'Bungee', cursive;
 }
