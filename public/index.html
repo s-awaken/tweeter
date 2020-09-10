@@ -45,7 +45,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
+        <form id="new-tweet">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="submit">
@@ -54,19 +54,13 @@
           </div>
         </form>
       </section>
-
-      <article class="tweets">
-        <header class="tweet-profile">
-            <p>Your name</p>
-            <img id="tweet-img" src="/images/profile-hex.png"> 
-        </header>
-        <div class="contents">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse labore facere eligendi molestias beatae molestiae, suscipit non repellendus!</p>
+      <section class="tweets-container"></section>
+        <div class="tweet">
+          
         </div>
-        <footer>
-          <p>10 days</p>
-        </footer>
-      </article>
+
+      </section>
+      <div id="tweet-error"></div>
 
     </main>
 

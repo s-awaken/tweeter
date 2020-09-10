@@ -2,7 +2,7 @@
   display: flex;
   line-height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: transparent;
   color: #FFFFFF;
   padding: 1.5em;
   justify-content: space-between;
@@ -10,4 +10,7 @@
 }
 .nav > span{
   font-family: 'Bungee', cursive;
+}
+.nav > p {
+  color: #FFFFFF;
 }
