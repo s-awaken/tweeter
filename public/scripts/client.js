@@ -23,12 +23,14 @@ $(() => {
 
 
   const createTweetElement = function(data) {
-    const $tweet = $('.tweet');
+    
+    const $tweet = $('<div class="tweet">');
+
     const $username = $('<p>').text(data.user.name);
     const $avatar = $(`<img src="${data.user.avatars}"/>`);
-    const $handle = $('p').text(data.user.handle);
+    const $handle = $('<p>').text(data.user.handle);
     
-    const $header = $('<header>').addClass("new-tweet-header");
+    const $header = $('<header class="tweet-header">');
 
     $header.append($username, $avatar, $handle);
 
@@ -66,21 +68,20 @@ $(() => {
     
     const $output = $('output').val();
     const $tweetText = $('#tweet-text').val();
-
+    console.log(parseInt($output));
     loadTweets();
     if ($tweetText !== "") {
-      if (parseInt($output) <= 140) {
+      if (parseInt($output) >= 0) {
         $(this).children('input').val('');
-        console.log($(this));
         $.post('/tweets/', serializedData)
           .then((response) => {
             console.log(response);
           });
       } else {
-        alert("tweet too long");
+        $("#tweet-error").text("Tweet too long").slideDown();
       }
     } else {
-      alert("tweet cannot be empty");
+      $("#tweet-error").text("Tweet cannot be empty").slideDown();
     }
     // submit serialized data to the server via a POST request to `/api/posts`
   });
