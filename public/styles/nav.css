@@ -2,15 +2,15 @@
   display: flex;
   line-height: 120px;
   width: 100%;
-  background-color: transparent;
+  background-color: cornflowerblue;
   color: #FFFFFF;
-  padding: 1.5em;
+  padding: 1.5rem;
   justify-content: space-between;
-  position: fixed;
+  
 }
-.nav > span{
+.logo{
   font-family: 'Bungee', cursive;
 }
-.nav > p {
+.nav > p a{
   color: #FFFFFF;
 }

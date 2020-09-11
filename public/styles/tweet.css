@@ -12,15 +12,22 @@
 }
 .tweet > header {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+  flex-direction: row;
+
+  justify-content: space-between;
 }
 .tweet > img {
   height: 5rem;
 }
-.tweet > div {
+.tweet > p {
   padding-bottom: 5px;
   border-bottom: 3px  solid #99A3A4;
+  word-wrap: break-word;
+}
+.tweet > footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .tweet:hover{
   box-shadow: 15px 15px 15px rgba(31, 58, 147, 0.8); 

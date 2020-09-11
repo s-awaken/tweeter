@@ -1,8 +1,10 @@
 .header-profile {
+  margin: 10% 15% 0 5%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  height: 400px;
-  width: 100%;  
+  height: 30%;
+  width: 30%;  
   background-color: #dbc34c;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   align-items: center;

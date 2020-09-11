@@ -26,19 +26,28 @@ $(() => {
     
     const $tweet = $('<div class="tweet">');
 
-    const $username = $('<p>').text(data.user.name);
     const $avatar = $(`<img src="${data.user.avatars}"/>`);
+    const $username = $('<p>').text(data.user.name);
     const $handle = $('<p>').text(data.user.handle);
     
     const $header = $('<header class="tweet-header">');
 
-    $header.append($username, $avatar, $handle);
+    $header.append($avatar, $username ,$handle);
 
-    const $content = $('<div>').text(data.content.text);
-
-    const $date = $('<output>').text(data['created_at']);
+    const $content = $('<p>').text(data.content.text);
     
-    $tweet.append($header, $content, $date);
+    const $icons = $('<p>');
+    $icons.append('<i class="fas fa-flag"></i>',
+      '<i class="fas fa-retweet"></i>',
+      '<i class="fas fa-thumbs-up"></i>');
+    
+    const dateCreated = new Date(data['created_at'] * 1000);
+    const day =  dateCreated.toLocaleString("en-US", { day: "numeric" });
+    
+    const $date = $('<p>').text(`${day} days ago`);
+    const $footer = $('<footer>');
+    $footer.append($date, $icons);
+    $tweet.append($header, $content, $footer);
 
     return $tweet;
   };
@@ -76,6 +85,7 @@ $(() => {
         $.post('/tweets/', serializedData)
           .then((response) => {
             console.log(response);
+            $(this).children('textarea').val('');
           });
       } else {
         $("#tweet-error").text("Tweet too long").slideDown();
