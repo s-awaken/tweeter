@@ -42,6 +42,7 @@ $(() => {
       '<i class="fas fa-thumbs-up"></i>');
     
     const dateCreated = new Date(data['created_at'] * 1000);
+
     const day =  dateCreated.toLocaleString("en-US", { day: "numeric" });
     
     const $date = $('<p>').text(`${day} days ago`);
@@ -56,6 +57,9 @@ $(() => {
 
   const renderTweets = function(tweets) {
     const $tweets = $(".tweets-container");
+    
+    $tweets.empty();
+
     for (const user in tweets) {
       const tweet = tweets[user];
       const $tweet = createTweetElement(tweet);
@@ -77,25 +81,32 @@ $(() => {
     
     const $output = $('output').val();
     const $tweetText = $('#tweet-text').val();
-    console.log(parseInt($output));
-    loadTweets();
+    
     if ($tweetText !== "") {
       if (parseInt($output) >= 0) {
         $(this).children('input').val('');
         $.post('/tweets/', serializedData)
           .then((response) => {
-            console.log(response);
+            loadTweets();
             $(this).children('textarea').val('');
+
           });
       } else {
         $("#tweet-error").text("Tweet too long").slideDown();
       }
     } else {
+      $('#tweet-error').css({ "display":"inline"});
       $("#tweet-error").text("Tweet cannot be empty").slideDown();
     }
     // submit serialized data to the server via a POST request to `/api/posts`
   });
 
 
-
+  const $slide = $("#slide");
+  $slide.click(function() {
+    $('html,body').animate({
+      scrollTop: $("#new-tweet").offset().top},
+    'slow');
+    $("#tweet-text").focus();
+  });
 });
