@@ -92,6 +92,7 @@ $(() => {
 
           });
       } else {
+        $('#tweet-error').css({ "display":"inline"});
         $("#tweet-error").text("Tweet too long").slideDown();
       }
     } else {
